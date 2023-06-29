@@ -9,9 +9,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk update && apk add --no-cache    \
+RUN sed -i '/v3\.\d*\/community/s/^#//' /etc/apk/repositories  && apk update && apk add --no-cache    \
     avahi                               \
-    networkmanager                      \
     bash jq iw net-tools                \
     sudo busybox-extras                 \
     hostapd networkmanager iptables     \
