@@ -13,7 +13,8 @@ RUN sed -i '/v3\.\d*\/community/s/^#//' /etc/apk/repositories  && apk update && 
     avahi                               \
     bash jq iw net-tools                \
     sudo busybox-extras                 \
-    hostapd networkmanager iptables     \
+    eudev networkmanager networkmanager-cli networkmanager-tui \
+    hostapd iptables                    \
     linux-firmware-other                \
     linux-firmware-ath6k                \
     linux-firmware-ath10k               \
