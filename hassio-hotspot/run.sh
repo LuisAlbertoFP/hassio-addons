@@ -91,6 +91,7 @@ if test ${ALLOW_INTERNET} = true; then
     iptables -v -t nat -A $(echo ${RULE_3})
     iptables -v -A $(echo ${RULE_4})
     iptables -v -A $(echo ${RULE_5})
+    iptables -I DOCKER-USER  ${INTERFACE} -o ${INTERNET_IF} -j ACCEPT
 fi
 
 
